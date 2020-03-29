@@ -8,11 +8,6 @@ import Button from "@material-ui/core/Button";
 
 class BooksListToolbar extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-  }
-
   handleAddClick = () => {
     this.props.openBookForm({});
   }
