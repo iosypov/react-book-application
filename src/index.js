@@ -1,13 +1,27 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import "date-fns";
+import {render} from 'react-dom';
+import {ThemeProvider} from "@material-ui/core/styles";
+import {MuiPickersUtilsProvider} from "@material-ui/pickers";
+import DateFnsUtils from '@date-io/date-fns';
+import {Provider} from "react-redux";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+
+import App from './App';
+import theme from "./utils/theme";
+import * as serviceWorker from './serviceWorker';
+import store from "./redux/store"
+
+
+
+render(
+  <Provider store={store}>
+    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </MuiPickersUtilsProvider>
+  </Provider>,
   document.getElementById('root')
 );
 
