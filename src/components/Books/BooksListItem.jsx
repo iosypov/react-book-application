@@ -41,7 +41,7 @@ class BooksListItem extends React.Component {
 
   formatDate(date) {
     const {muiPickerContext} = this.props;
-    date = muiPickerContext.date(date);
+    date = muiPickerContext.date(date.split(".")[0]);
     return muiPickerContext.format(date, "MM/dd/yyyy")
   }
 

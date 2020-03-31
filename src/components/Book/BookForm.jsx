@@ -19,7 +19,7 @@ class BookForm extends React.Component {
       titleValid: {valid: true},
       author: book.author?book.author:"",
       authorValid: {valid: true},
-      date: book.date?new Date(book.date):new Date(),
+      date: book.date?new Date(book.date.split(".")[0]):new Date(),
       dateValid: {valid: true}
     }
   }
